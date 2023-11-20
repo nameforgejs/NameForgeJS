@@ -1,125 +1,202 @@
 # NameForgeJS
 
-Version: 1.1
+Version: 1.3
 
 ## Introduction
-NameForgeJS is a powerful JavaScript library that allows you to generate random names with customizable settings. With support for 105 countries worldwide, this library is constantly updated to provide an even better experience.
+NameForgeJS is a JavaScript library that allows you to generate random names with customizable settings. It supports 105 countries worldwide and is regularly updated for an improved experience.
 
 ## Installation
-To install NameForgeJS, simply use npm:
+To install NameForgeJS, use the following command in your terminal:
 ```
 npm install nameforgejs
 ```
-View source code on github: https://github.com/nameforgejs/NameForgeJS
+The source code is available on [Github](https://github.com/nameforgejs/NameForgeJS).
 
 ## Usage
-To use NameForgeJS in your JavaScript project, import it like this:
+To use NameForgeJS in your JavaScript project, import it into your file:
 ```javascript
-import { generateName } from 'nameforgejs';
+import NameForgeJS from 'nameforgejs';
 
-const generatedNames = generateName();
+const generator = new NameForgeJS();
+const generatedNames = generator.generateNames();
 console.log(generatedNames);
 ```
 
-## Customizing Settings
-By default, the library has the following settings:
-- `name_type`: 'any'
-- `starts_with`: 'any'
-- `ends_with`: 'any'
-- `generate_last_name`: true
-- `gender`: 'any'
-- `country`: 'any'
-- `count`: 1
-- `names_with_title`: 0
-- `title`: 'Mr.'
+Since version 1.3, you can generate a link to download the names as a JSON file. Here's an example:
+```javascript
+import NameForgeJS from 'nameforgejs';
 
-The settings that support "any" as a value are:
-- `name_type`
-- `starts_with`
-- `ends_with`
-- `gender`
-- `country`
+const generator = new NameForgeJS();
+const generatedNames = generator.generateNames();
+console.log(generatedNames);
+
+generator.createJSONLink(generatedNames, "file name");
+```
+- Note: This only returns the URL for the file. To use the URL, you can do the following:
+```javascript
+import NameForgeJS from 'nameforgejs';
+
+const generator = new NameForgeJS();
+const generatedNames = generator.generateNames();
+console.log(generatedNames);
+
+generator.createJSONLink(generatedNames, "file name").then((url) => {
+    console.log("The URL for the file is: ", url);
+})
+```
+
+If you want to save the JSON file after getting the download URL, you can do it like this:
+```javascript
+import NameForgeJS from 'nameforgejs';
+
+const generator = new NameForgeJS();
+const generatedNames = generator.generateNames();
+console.log(generatedNames);
+
+generator.createJSONLink(generatedNames, "file name").save();
+```
+In the above example, it will fetch the download URL and automatically save the JSON file.
+
+## Customizing Settings
+
+The library comes with a set of default settings, which you can customize according to your needs. Below is a list of these settings along with their default values and how you can modify them:
+
+### Settings
+
+1. **name_type**: 
+   - **Default**: 'human'
+   - **Options**: 'human', 'animal', 'any' (where 'any' includes both human and animal names)
+   - **Usage**: `name_type: 'human'`, `name_type: 'animal'`, `name_type: 'any'`
+
+2. **starts_with**: 
+   - **Default**: 'any'
+   - **Options**: Single character or array of characters
+   - **Usage**: `starts_with: 'f'`, `starts_with: ['f', 'b']`, `starts_with: 'any'`
+
+3. **ends_with**: 
+   - **Default**: 'any'
+   - **Options**: Single character or array of characters
+   - **Usage**: `ends_with: 'f'`, `ends_with: ['f', 'b']`, `ends_with: 'any'`
+
+4. **generate_last_name**: 
+   - **Default**: true
+   - **Options**: true, false
+   - **Usage**: `generate_last_name: true`, `generate_last_name: false`
+
+5. **gender**: 
+   - **Default**: 'any'
+   - **Options**: 'male', 'female', 'any'
+   - **Usage**: `gender: 'male'`, `gender: 'female'`, `gender: 'any'`
+
+6. **country**: 
+   - **Default**: 'any'
+   - **Options**: Single country or array of countries
+   - **Usage**: `country: 'sweden'`, `country: ['sweden', 'turkey']`, `country: 'any'`
+
+7. **count**: 
+   - **Default**: 10
+   - **Options**: Integer (number of names to generate)
+   - **Usage**: `count: 5`
+
+8. **names_with_title**: 
+   - **Default**: 50 (percent)
+   - **Options**: Percentage (0 to 100) of names to include a title
+   - **Usage**: `names_with_title: 75`
+
+9. **title**: 
+   - **Default**: 'Mr.'
+   - **Usage**: `title: 'Dr.'`
+
+10. **generate_age**: 
+    - **Default**: false
+    - **Options**: true, false
+    - **Usage**: `generate_age: true`, `generate_age: false`
+
+11. **min_age**: 
+    - **Default**: 0
+    - **Options**: Integer (minimum age)
+    - **Usage**: `min_age: 10`
+
+12. **max_age**: 
+    - **Default**: 100
+    - **Options**: Integer (maximum age)
+    - **Usage**: `max_age: 25`
 
 You can customize these settings to generate names according to your preferences. 
 
 For example:
 ```javascript
-import { generateName } from 'nameforgejs';
+import NameForgeJS from 'nameforgejs';
 
-const generatedNames = generateName({ generate_last_name: false, country: "brazil" });
+const generator = new NameForgeJS();
+const generatedNames = generator.generateNames({ generate_last_name: false, country: "brazil" });
 console.log(generatedNames);
 ```
 
-The `starts_with`, `ends_with`, and `country` settings support selecting multiple values. To do so, you can add the values inside an array. For example:
+The `starts_with`, `ends_with`, and `country` settings support selecting multiple values. To do so, you can provide an array of values. For example:
 ```javascript
-import { generateName } from 'nameforgejs';
+import NameForgeJS from 'nameforgejs';
 
-const generatedNames = generateName({starts_with: ["a", "f"], ends_with: ["g", "k"] country: ["spain", "italy"]});
+const generator = new NameForgeJS();
+const generatedNames = generator.generateNames({starts_with: ["a", "f"], ends_with: ["g", "k"], country: ["spain", "italy"]});
 console.log(generatedNames);
 ```
 
-You can also specify the name_type setting to generate human names, animal names, or both. For example:
+You can also specify the `name_type` setting to generate human names, animal names, or both. For example:
 ```javascript
-import { generateName } from 'nameforgejs';
+import NameForgeJS from 'nameforgejs';
 
-const generatedHumanNames = generateName({ name_type: 'human' });
+const generator = new NameForgeJS();
+const generatedHumanNames = generator.generateNames({ name_type: 'human' });
 console.log(generatedHumanNames);
 
-const generatedAnimalNames = generateName({ name_type: 'animal' });
+const generatedAnimalNames = generator.generateNames({ name_type: 'animal' });
 console.log(generatedAnimalNames);
 
-const generatedAnyNames = generateName({ name_type: 'any' });
+const generatedAnyNames = generator.generateNames({ name_type: 'any' });
 console.log(generatedAnyNames);
 ```
 
-## Available Settings
-- `name_type`: Generate human / animal names
-- `starts_with`: The letter the first name starts with
-- `ends_with`: The letter the first name ends with
-- `generate_last_name`: Whether to generate a last name or not
-- `gender`: The gender of the generated name (male / female)
-- `country`: The country from which names will be generated
-- `count`: The number of names to generate
-- `names_with_title`: The percentage of names with a title
-- `title`: The specific title to be included
+### Notes:
+- If `generate_age` is set to true, the names will be returned as objects instead of strings.
 
 ## Supported Countries
-The library currently supports names from the following 105 countries:
-- United States
-- Portugal
-- Sweden
-- Denmark
-- Italy
-- France
-- Germany
-- China
-- Korea
-- Finland
-- Austria
-- Hungary
-- Iceland
-- Belgium
-- Yemen
-- Zimbabwe
-- Russia
-- Ukraine
-- Qatar
-- Brazil
-- Oman
-- Arabic
-- Vanuatu
-- Ireland
-- India
-- Estonia
-- Afghanistan
-- Lithuanian
-- Iraq
-- Turkey
-- Egypt
-- Ghana
-- Croatia
-- Greece
-- Chile
+The library currently supports names from 105 countries:
+- united_States
+- portugal
+- sweden
+- denmark
+- italy
+- france
+- germany
+- china
+- korea
+- finland
+- austria
+- hungary
+- iceland
+- belgium
+- yemen
+- zimbabwe
+- russia
+- ukraine
+- qatar
+- brazil
+- oman
+- arabic
+- vanuatu
+- ireland
+- india
+- estonia
+- afghanistan
+- lithuanian
+- iraq
+- turkey
+- egypt
+- ghana
+- croatia
+- greece
+- chile
 - namibia
 - luxembourg
 - ecuador
@@ -152,7 +229,7 @@ The library currently supports names from the following 105 countries:
 - cuba
 
 ## Contact Information
-If you have any questions, feedback, or encounter issues with NameForgeJS, feel free to get in touch:
+If you have any questions, feedback, or encounter issues with NameForgeJS, feel free to reach out:
 Email: mazewinther@gmail.com
 Github: https://github.com/nameforgejs
 
@@ -160,10 +237,43 @@ Github: https://github.com/nameforgejs
 This project is licensed under the MIT License. See the license.txt file for more information.
 
 ## Updates
-### Version 1.1
-Introducing the latest update for NameForgeJS library:
+- NameForgeJS is regularly updated and improved. We appreciate your patience.
 
-Selecting multiple values for "starts_with", "ends_with", and "country" is now possible! Take a look at the example below:
+### Version 1.3
+NameForgeJS has been improved with the following additions:
+
+New Settings:
+- `generate_age` (boolean)
+- `min_age` (number)
+- `max_age` (number)
+
+You can now generate ages along with the names.
+
+Structure Improvement:
+- Previously, you would use NameForgeJS like this:
+```javascript
+import { generateName } from 'nameforgejs';
+
+const generatedNames = generateName();
+console.log(generatedNames);
+```
+From now on, you will need to use NameForgeJS like this:
+```javascript
+import NameForgeJS from 'nameforgejs';
+
+const generator = new NameForgeJS();
+const generatedNames = generator.generateNames();
+console.log(generatedNames);
+```
+
+JSON Export:
+- It is now possible to export the names in a JSON format. Read the updated section `Usage` to learn more
+
+### Version 1.2
+The latest update for NameForgeJS introduces the following enhancements:
+
+Multiple Values:
+- Now you can select multiple values for "starts_with", "ends_with", and "country". Example:
 ```javascript
 import { generateName } from 'nameforgejs';
 
@@ -171,12 +281,20 @@ const generatedNames = generateName({starts_with: ["a", "f"], ends_with: ["g", "
 console.log(generatedNames);
 ```
 
-Additionally, the library has extended the support of countries to 100.
+Extended Country Support:
+- The library now supports names from 105 countries.
 
-But that's not all! We've also added a new setting called `name_type`. Let's explore more about this new feature:
-- `name_type`: 'any'
-Accepted values for this setting include: 
-- "any"
-- "human"
-- "animal"
-Now, you can generate names specifically for humans, animals, or even mix them up according to your preferences. It's all up to you!
+New Setting: `name_type`
+- This setting allows you to generate names specifically for humans, animals, or a mix. Accepted values include: "any", "human", "animal". Example:
+```javascript
+import { generateName } from 'nameforgejs';
+
+const generatedHumanNames = generateName({ name_type: 'human' });
+console.log(generatedHumanNames);
+
+const generatedAnimalNames = generateName({ name_type: 'animal' });
+console.log(generatedAnimalNames);
+
+const generatedAnyNames = generateName({ name_type: 'any' });
+console.log(generatedAnyNames);
+```
