@@ -237,6 +237,11 @@ If you have suggestions, pull a request on Github:
  If you encounter issues with NameForgeJS, click the following link:
  [https://github.com/nameforgejs/NameForgeJS/issues](https://github.com/nameforgejs/NameForgeJS/issues)
 
+ ## Socials
+ GitHub: https://github.com/nameforgejs/NameForgeJS/
+ npm: https://www.npmjs.com/~namegenjs
+ Twitter (X): https://twitter.com/nameforgejs_
+
 ## License
 You're allowed to:
 - Use the library for any purpose
