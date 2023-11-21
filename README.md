@@ -1,6 +1,6 @@
 # NameForgeJS
 
-Version: 1.3
+Version: 1.3.2
 
 ## Introduction
 NameForgeJS is a JavaScript library that allows you to generate random names with customizable settings. It supports 105 countries worldwide and is regularly updated for an improved experience.
@@ -228,12 +228,23 @@ The library currently supports names from 105 countries:
 - cuba
 
 ## Contact Information
-If you have any questions, feedback, or encounter issues with NameForgeJS, feel free to reach out:
-Email: mazewinther@gmail.com
-Github: https://github.com/nameforgejs
+If you have any questions, feel free to reach out:
+- Email: mazewinther@gmail.com
+
+If you have suggestions, pull a request on Github:
+[https://github.com/nameforgejs/NameForgeJS/pulls](https://github.com/nameforgejs/NameForgeJS/pulls)
+
+ If you encounter issues with NameForgeJS, click the following link:
+ [https://github.com/nameforgejs/NameForgeJS/issues](https://github.com/nameforgejs/NameForgeJS/issues)
 
 ## License
-This project is licensed under the MIT License. See the license.txt file for more information.
+You're allowed to:
+- Use the library for any purpose
+- Modify the NameForgeJS file in your project to your liking
+- Commercial use is allowed
+
+You're not allowed to:
+- Sell a copy of the library
 
 ## Updates
 - NameForgeJS is regularly updated and improved. We appreciate your patience.
