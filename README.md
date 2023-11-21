@@ -10,7 +10,6 @@ To install NameForgeJS, use the following command in your terminal:
 ```
 npm install nameforgejs
 ```
-The source code is available on [Github](https://github.com/nameforgejs/NameForgeJS).
 
 ## Usage
 To use NameForgeJS in your JavaScript project, import it into your file:
