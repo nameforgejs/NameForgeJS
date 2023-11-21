@@ -237,13 +237,13 @@ If you have any questions, feel free to reach out:
 If you have suggestions, pull a request on Github:
 [https://github.com/nameforgejs/NameForgeJS/pulls](https://github.com/nameforgejs/NameForgeJS/pulls)
 
- If you encounter issues with NameForgeJS, click the following link:
- [https://github.com/nameforgejs/NameForgeJS/issues](https://github.com/nameforgejs/NameForgeJS/issues)
+If you encounter issues with NameForgeJS, click the following link:
+[https://github.com/nameforgejs/NameForgeJS/issues](https://github.com/nameforgejs/NameForgeJS/issues)
 
- ## Socials
- GitHub: https://github.com/nameforgejs/NameForgeJS/
- npm: https://www.npmjs.com/~namegenjs
- Twitter (X): https://twitter.com/nameforgejs_
+## Socials
+- GitHub: https://github.com/nameforgejs/NameForgeJS/
+- npm: https://www.npmjs.com/~namegenjs
+- Twitter (X): https://twitter.com/nameforgejs_
 
 ## License
 You're allowed to:
