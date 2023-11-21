@@ -3,7 +3,7 @@
 - Version: 1.3.2
 - Npm downloads: 307 (updated every day)
 
-[Npm: ](https://www.npmjs.com/package/nameforgejs)
+Npm: [https://www.npmjs.com/package/nameforgejs](https://www.npmjs.com/package/nameforgejs)
 
 ## Introduction
 NameForgeJS is a JavaScript library that allows you to generate random names with customizable settings. It supports 105 countries worldwide and is regularly updated for an improved experience.
