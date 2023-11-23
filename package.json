@@ -1,6 +1,6 @@
 {
   "name": "nameforgejs",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "A random name generation library",
   "main": "./src/NameForgeJS.js",
   "scripts": {
