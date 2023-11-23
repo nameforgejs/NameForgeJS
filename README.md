@@ -1,9 +1,9 @@
 # NameForgeJS
 
-- Version: 1.3.2
+- Version: 1.4.0
 - Npm downloads: 307 (updated every day)
 
-Npm: [https://www.npmjs.com/package/nameforgejs](https://www.npmjs.com/package/nameforgejs)
+Github: [https://github.com/nameforgejs/NameForgeJS](https://github.com/nameforgejs/NameForgeJS)
 
 ## Introduction
 NameForgeJS is a JavaScript library that allows you to generate random names with customizable settings. It supports 105 countries worldwide and is regularly updated for an improved experience.
@@ -58,6 +58,31 @@ console.log(generatedNames);
 generator.createJSONLink(generatedNames, "file name").save();
 ```
 In the above example, it will fetch the download URL and automatically save the JSON file.
+
+You can add and remove male/female/last names from a specific country. Example:
+```javascript
+import NameForgeJS from 'nameforgejs';
+
+const generator = new NameForgeJS();
+
+//adding custom names
+generator.setCustomNames("japan", {
+    male: ["Daiki"],
+    female: ["Haruka"],
+    last_names: ["Suzuki"]
+});
+
+//removing existing names
+generator.removeNames("japan", {
+    male: ["Akihiro"],
+    female: ["Yui"],
+    last_names: ["Satō"]
+});
+
+//NOTE: It's important that you generate the names after adding/removing names
+const generatedNames = generator.generateNames();
+console.log(generatedNames);
+```
 
 ## Customizing Settings
 
@@ -229,6 +254,51 @@ The library currently supports names from 105 countries:
 - chad
 - colombia
 - cuba
+- gambia
+- georgia
+- indonesia
+- iran
+- israel
+- jamaica
+- liberia
+- mexico
+- morocco
+- nepal
+- new_zealand
+- niger
+- nigeria
+- pakistan
+- peru
+- philippines
+- poland
+- romania
+- slovakia
+- slovenia
+- south_africa
+- south_korea
+- spain
+- syria
+- thailand
+- united_kingdom
+- zambia
+- vietnam
+- venezuela
+- uzbekistan
+- uruguay
+- uganda
+- tuvalu
+- turkmenistan
+- tunisia
+- tonga
+- togo
+- tanzania
+- suriname
+- sudan
+- somalia
+- singapore
+- seychelles
+- serbia
+- senegal
 
 ## Contact Information
 If you have any questions, feel free to reach out:
@@ -257,13 +327,46 @@ You're not allowed to:
 ## Updates
 - NameForgeJS is regularly updated and improved. We appreciate your patience.
 
+### Version 1.4
+We've added 45 more countries, brining the overall number to 150 countries worldwide.
+
+You now have even more control over generating names. You can add and remove male/female/last names from a specific country. Example:
+```javascript
+import NameForgeJS from 'nameforgejs';
+
+const generator = new NameForgeJS();
+
+//adding custom names
+generator.setCustomNames("japan", {
+    male: ["Daiki"],
+    female: ["Haruka"],
+    last_names: ["Suzuki"]
+});
+
+//removing existing names
+generator.removeNames("japan", {
+    male: ["Akihiro"],
+    female: ["Yui"],
+    last_names: ["Satō"]
+});
+
+// NOTE: It's important that you generate the names after adding/removing names
+
+const generatedNames = generator.generateNames();
+console.log(generatedNames);
+```
+
+Fixed important bugs. The previous version had several issues, and they are now fixed to provide a better experience
+
+- What features should we add in the next update? Let us know on Twitter or GitHub. your feedback means a lot.
+
 ### Version 1.3
 NameForgeJS has been improved with the following additions:
 
 New Settings:
-- `generate_age` (boolean)
-- `min_age` (number)
-- `max_age` (number)
+- `generate_age`
+- `min_age`
+- `max_age`
 
 You can now generate ages along with the names.
 
