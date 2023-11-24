@@ -1,15 +1,12 @@
 # NameForgeJS
 
-- Version: 1.4.0
-- Npm downloads: 307 (updated every day)
+- Version: 1.4.1
 
-npm: [https://www.npmjs.com/package/nameforgejs](https://www.npmjs.com/package/nameforgejs)
-
-## Version 1.4.0 is here
-To see what's new, scroll to the bottom.
+## Version 1.4 is here
+To see more about the new update, scroll down to the `updates` section.
 
 ## Introduction
-NameForgeJS is a JavaScript library that allows you to generate random names with customizable settings. It supports 105 countries worldwide and is regularly updated for an improved experience.
+NameForgeJS is a JavaScript library that allows you to generate random names with customizable settings. It supports 150 countries worldwide and is regularly updated for an improved experience.
 
 ## Installation
 To install NameForgeJS, use the following command in your terminal:
@@ -50,7 +47,7 @@ generator.createJSONLink(generatedNames, "file name").then((url) => {
 })
 ```
 
-If you want to save the JSON file after getting the download URL, you can do it like this:
+If you want to download the JSON file after getting the download URL, you can do it like this:
 ```javascript
 import NameForgeJS from 'nameforgejs';
 
@@ -58,9 +55,9 @@ const generator = new NameForgeJS();
 const generatedNames = generator.generateNames();
 console.log(generatedNames);
 
-generator.createJSONLink(generatedNames, "file name").save();
+generator.createJSONLink(generatedNames, "file name").download();
 ```
-In the above example, it will fetch the download URL and automatically save the JSON file.
+In the above example, it will fetch the download URL and automatically download the JSON file.
 
 You can add and remove male/female/last names from a specific country. Example:
 ```javascript
@@ -191,7 +188,7 @@ console.log(generatedAnyNames);
 - If `generate_age` is set to true, the names will be returned as objects instead of strings.
 
 ## Supported Countries
-The library currently supports names from 105 countries:
+The library currently supports names from 150 countries:
 - united_States
 - portugal
 - sweden
@@ -200,7 +197,7 @@ The library currently supports names from 105 countries:
 - france
 - germany
 - china
-- korea
+- north_korea
 - finland
 - austria
 - hungary
@@ -213,7 +210,7 @@ The library currently supports names from 105 countries:
 - qatar
 - brazil
 - oman
-- arabic
+- saudi_arabia
 - vanuatu
 - ireland
 - india
@@ -304,14 +301,10 @@ The library currently supports names from 105 countries:
 - senegal
 
 ## Contact Information
-If you have any questions, feel free to reach out:
+If you have any questions, suggestions, or encounter issues, feel free to reach out:
 - Email: mazewinther@gmail.com
-
-If you have suggestions, pull a request on Github:
-[https://github.com/nameforgejs/NameForgeJS/pulls](https://github.com/nameforgejs/NameForgeJS/pulls)
-
-If you encounter issues with NameForgeJS, click the following link:
-[https://github.com/nameforgejs/NameForgeJS/issues](https://github.com/nameforgejs/NameForgeJS/issues)
+- Twitter: [https://twitter.com/nameforgejs_](https://twitter.com/nameforgejs_)
+- GitHub: [https://github.com/nameforgejs/NameForgeJS](https://github.com/nameforgejs/NameForgeJS)
 
 ## Socials
 - GitHub: https://github.com/nameforgejs/NameForgeJS/
@@ -319,19 +312,13 @@ If you encounter issues with NameForgeJS, click the following link:
 - Twitter (X): https://twitter.com/nameforgejs_
 
 ## License
-You're allowed to:
-- Use the library for any purpose
-- Modify the NameForgeJS file in your project to your liking
-- Commercial use is allowed
-
-You're not allowed to:
-- Sell a copy of the library
+MIT license (See the license file for more details)
 
 ## Updates
 - NameForgeJS is regularly updated and improved. We appreciate your patience.
 
 ### Version 1.4
-We've added 45 more countries, brining the overall number to 150 countries worldwide.
+We've added 45 more countries, bringing the overall number to 150 countries worldwide.
 
 You now have even more control over generating names. You can add and remove male/female/last names from a specific country. Example:
 ```javascript
