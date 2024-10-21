@@ -1,3 +1,5 @@
+⚠️ Notice: This repository is not currently maintained, but you're welcome to use it. I might resume maintenance and development in the future, though that’s not planned at this moment.
+
 # NameForgeJS
 
 - Version: 1.4.1
