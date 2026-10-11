@@ -1,18 +1,39 @@
 {
   "name": "nameforgejs",
   "version": "1.4.0",
-  "description": "A random name generation library",
-  "main": "./src/NameForgeJS.js",
+  "description": "A random name generation library for Node.js and Bun",
+  "type": "module",
+  "main": "./src/NameForgeJS.cjs",
+  "exports": {
+    ".": {
+      "import": "./NameForgeJS.js",
+      "require": "./src/NameForgeJS.cjs"
+    },
+    "./NameForgeJS.js": "./NameForgeJS.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "NameForgeJS.js",
+    "src/"
+  ],
+  "engines": {
+    "node": ">=22",
+    "bun": ">=1.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test",
+    "test:bun": "bun test ./test/nameforge.test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nameforgejs/NameForgeJS.git"
   },
-  "keywords": ["random", "name", "generator", "nameforgejs"],
+  "keywords": [
+    "random",
+    "name",
+    "generator",
+    "bun"
+  ],
   "author": "Maze Winther",
-  "license": "MIT",
-  "dependencies": {
-  }
+  "license": "MIT"
 }
